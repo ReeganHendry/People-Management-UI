@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" ng-app="peopleMgmtApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>People Management</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="person-list/person-list.module.js"></script>
+    <script src="person-list/person-list.service.js"></script>
+    <script src="person-list/person-list.component.js"></script>
+    <script src="person-detail/person-detail.module.js"></script>
+    <script src="person-detail/person-detail.component.js"></script>
+  </head>
+  <body>
+
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">People Management</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse pull-left">
+              <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li uib-dropdown is-open="status.isopen" auto-close="always">
+                <a id="people" uib-dropdown-toggle ng-disabled="disabled">People <span class="caret"></span></a>
+                  <ul uib-dropdown-menu role="menu" aria-labelledby="people">
+                    <li><a ui-sref="createPerson({action:'ADD'})">Create New Person</a></li>
+                    <li><a ui-sref="people">Search</a></li>
+                  </ul>
+                </li>
+
+              <!--  <li uib-dropdown>
+                <a href="#" id="people2" uib-dropdown-toggle>People 2<span class="caret"></span></a>
+                  <ul uib-dropdown-menu>
+                    <li><a ui-sref="person/create">Create New Person 2</a></li>
+                    <li><a href="#">Search 2</a></li>
+                  </ul>
+                </li> -->
+            </ul>
+            </div>
+            <div class="collapse navbar-collapse pull-right">
+              <ul class="nav navbar-nav">
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+    </nav>
+
+
+
+
+
+
+
+  <div class="container">
+      <div class="starter-template">
+          <div ui-view></div>
+      </div>
+    </div>
+
+  </body>
+</html>
